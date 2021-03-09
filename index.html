@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bt Sự kiện chuột</title>
+     <style>
+         
+     </style>
+</head>
+<body style="position: relative;">
+    <form action="index.html">
+        <img src="img_01.png" alt="car" id="car01"  style="height: 50px; width: 100px;">
+        
+        <input type="button" value="&#8592;" onclick="moveLeft()">
+        <input type="button" value="&#8594;" onclick="moveRight()">
+        <input type="button" value="&#8595;" onclick="moveBottom()">
+        <input type="button" value="&#8593;" onclick="moveTop()">
+    </form>
+    <script>
+        let imgObj = null;
+
+
+
+        function init(){
+        imgObj = document.getElementById('car01');
+        imgObj.style.position = 'absolute';
+        imgObj.style.left='0px';
+        imgObj.style.top='50px';
+
+        
+    }
+
+        function moveLeft(){
+            imgObj.style.width = "100px";
+            imgObj.style.height = "50px";
+            imgObj.src = "img_04.png";
+            imgObj.style.left = (parseInt(imgObj.style.left) - 10 )+ 'px';
+        }
+
+        function moveRight(){
+            imgObj.style.width = "100px";
+            imgObj.style.height = "50px";
+            imgObj.src = "img_01.png";
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+
+        }
+        function moveBottom(){
+            imgObj.style.width = "50px";
+            imgObj.style.height = "100px";
+            imgObj.src = "img_02.png";
+            
+            imgObj.style.top = parseInt(imgObj.style.top) + 10 + 'px';
+        }
+        function moveTop(){
+            imgObj.src= "img_03.png";
+            imgObj.style.width = "50px";
+            imgObj.style.height = "100px";
+
+            imgObj.style.top = parseInt(imgObj.style.top) - 10 + 'px';
+        }
+        window.onload = init;
+
+    </script>
+</body>
+</html>
